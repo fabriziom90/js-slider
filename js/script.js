@@ -73,3 +73,34 @@ images[activeImage].classList.add('active');
 // recuperiamo i pulsanti
 const nextButton = document.querySelector('.fa-arrow-right');
 const leftButton = document.querySelector('.fa-arrow-left');
+
+nextButton.addEventListener('click', function() {
+    // rimuovo la classe active dall'elemento attualmente attivo
+    images[activeImage].classList.remove('active');
+    // incremento il valore del cursore
+    activeImage++;
+
+    // se il cursore ha un valore maggiore rispetto alla lunghezza dell'array lo rimetto a zero
+    if(activeImage >= images.length){
+        activeImage = 0;
+    }
+
+    // imposto la classe active al nuovo elemento
+    images[activeImage].classList.add('active');
+
+});
+
+leftButton.addEventListener('click', function(){
+    // rimuovo la classe active dall'elemento attualmente attivo
+    images[activeImage].classList.remove('active');
+    // incremento il valore del cursore
+    activeImage--;
+
+    // se il cursore ha un valore maggiore rispetto alla lunghezza dell'array lo rimetto a zero
+    if(activeImage < 0){
+        activeImage = images.length - 1;
+    }
+
+    // imposto la classe active al nuovo elemento
+    images[activeImage].classList.add('active');
+});
