@@ -60,4 +60,16 @@ const renderImages = (array) => {
     gallery.innerHTML = images;
 }
 
+// siamo andati a renderizzare tutte le immagini
 renderImages(pics);
+
+// definisco il valore inziale del mio indice
+let activeImage = 0;
+// // vado a prendere tutte le immagini dal dom
+const images = document.querySelectorAll('#carousel figure');
+// aggiungo all'elemento con indice 0 dell'array images la classe active
+images[activeImage].classList.add('active');
+
+// recuperiamo i pulsanti
+const nextButton = document.querySelector('.fa-arrow-right');
+const leftButton = document.querySelector('.fa-arrow-left');
