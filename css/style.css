@@ -31,6 +31,14 @@
     position: relative;
 }
 
+.gallery figure{
+    display: none;
+}
+
+.gallery figure.active{
+    display: block;
+}
+
 .gallery img{
     width: 100%;
     border-radius: 20px;
